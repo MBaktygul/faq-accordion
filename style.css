@@ -146,25 +146,38 @@ textarea:not([rows]) {
 
 body {
 	background-color: var(--clr-light-pink);
-	background-image: url(/assets/images/background-pattern-mobile.svg);
-	background-repeat: no-repeat;
-	padding: 8.8rem 1.5rem;
-	font-family: 'WorkSans', sans-serif;
 }
 
-@media (min-width: 376px) {
-	body {
-		background-image: url(/assets/images/background-pattern-desktop.svg);
+.background-image {
+	position: fixed;
+	width: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+@media (min-width: 320px) {
+	.background-mobile {
+		display: none;
 	}
 }
 
-@media (min-width: 376px) {
-	h1 {
-		font-size: var(--fs-36);
+.background-desktop {
+	display: none;
+}
+
+@media (min-width: 321px) {
+	.background-desktop {
+		display: block;
+		background-repeat: no-repeat;
 	}
 }
 
 /* accordion */
+
+.accordion__container {
+	padding: 8.8rem 1.5rem 0 1.5rem;
+	font-family: 'WorkSans', sans-serif;
+}
 
 .accordion {
 	display: flex;
@@ -190,7 +203,7 @@ body {
 	height: 24px;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 320px) {
 	.accordion__header-image {
 		width: 30px;
 		height: 30px;
@@ -207,6 +220,40 @@ body {
 .accordion__subheader:hover {
 	cursor: pointer;
 	color: var(--clr-accent);
+}
+
+.accordion__input {
+	display: none; /* Hide the checkbox */
+}
+
+.accordion__answer {
+	display: none; /* Hide answer content by default */
+	padding: var(--spacing-l) 0;
+}
+
+.border {
+	border-bottom: 0.5px solid lightgray;
+	padding-bottom: 1rem;
+}
+
+.icon {
+	min-width: 30px;
+}
+
+.icon-minus {
+	display: none;
+}
+
+.accordion__input:checked ~ .accordion__answer {
+	display: block;
+}
+
+.accordion__input:checked + .accordion__subheader .icon-plus {
+	display: none;
+}
+
+.accordion__input:checked + .accordion__subheader .icon-minus {
+	display: inline;
 }
 
 .accordion__content {
@@ -230,8 +277,4 @@ body {
 	align-items: center;
 	justify-content: center;
 	padding-top: 10rem;
-}
-
-.plus {
-	overflow: hidden;
 }
