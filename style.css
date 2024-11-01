@@ -152,14 +152,15 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: var(--clr-light-pink);
-	background-image: url(/assets/images/background-pattern-mobile.svg);
+	background-image: url(https://raw.githubusercontent.com/MBaktygul/faq-accordion/main/assets/images/background-pattern-mobile.svg);
+
 	background-repeat: no-repeat;
 	padding: 0 1rem;
 }
 
 @media (min-width: 321px) {
 	body {
-		background-image: url(/assets/images/background-pattern-desktop.svg);
+		background-image: url(https://raw.githubusercontent.com/MBaktygul/faq-accordion/main/assets/images/background-pattern-desktop.svg);
 		background-repeat: no-repeat;
 	}
 }
