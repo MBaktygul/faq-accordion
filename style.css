@@ -147,27 +147,30 @@ textarea:not([rows]) {
 body {
 	font-family: 'WorkSans', sans-serif;
 	position: relative;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
 	background-color: var(--clr-light-pink);
-	background-image: url('https://github.com/MBaktygul/faq-accordion/blob/main/assets/images/background-pattern-mobile.svg');
+}
 
-	background-repeat: no-repeat;
-	padding: 0 1rem;
+.background-image {
+	position: fixed;
+	z-index: -1;
+	background-image: url('https://raw.githubusercontent.com/MBaktygul/faq-accordion/refs/heads/main/assets/images/background-pattern-mobile.svg');
+	background-size: cover;
+	width: 100%;
+	height: 30vh;
 }
 
 @media (min-width: 321px) {
-	body {
+	.background-image {
 		background-image: url('https://raw.githubusercontent.com/MBaktygul/faq-accordion/refs/heads/main/assets/images/background-pattern-desktop.svg');
-		background-repeat: no-repeat;
 	}
 }
 
 /* accordion */
 
 .accordion__container {
+	display: grid;
+	justify-content: center;
+	justify-items: center;
 	font-family: 'WorkSans', sans-serif;
 }
 
@@ -179,7 +182,10 @@ body {
 	border-radius: 8px;
 	gap: var(--spacing-l);
 	box-shadow: 0px 20px 40px 5px rgba(140, 105, 145, 0.2);
-	max-width: 37.5rem;
+	max-width: 600px;
+	position: absolute;
+	top: 20vh;
+	margin: 0 1rem;
 }
 
 .accordion__header {
@@ -201,6 +207,14 @@ body {
 	}
 }
 
+.accordion__content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding-bottom: var(--spacing-l);
+	border-bottom: 0.5px solid lightgray;
+}
+
 .accordion__subheader {
 	display: flex;
 	justify-content: space-between;
@@ -211,15 +225,6 @@ body {
 .accordion__subheader:hover {
 	cursor: pointer;
 	color: var(--clr-accent);
-}
-
-.accordion__input {
-	display: none; /* Hide the checkbox */
-}
-
-.accordion__answer {
-	display: none; /* Hide answer content by default */
-	padding: var(--spacing-l) 0;
 }
 
 .border {
@@ -235,6 +240,15 @@ body {
 	display: none;
 }
 
+.accordion__input {
+	display: none;
+}
+
+.accordion__answer {
+	display: none;
+	margin-top: 1rem;
+}
+
 .accordion__input:checked ~ .accordion__answer {
 	display: block;
 }
@@ -247,14 +261,6 @@ body {
 	display: inline;
 }
 
-.accordion__content {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-	padding-bottom: var(--spacing-l);
-	border-bottom: 0.5px solid lightgray;
-}
-
 .accordion__answer {
 	transition: 1.4 ease-in;
 }
@@ -262,11 +268,12 @@ body {
 /* attribution */
 
 .attribution {
-	position: fixed;
-	bottom: 10px;
-	font-size: 12px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: absolute;
+	bottom: 10px;
+	font-size: 12px;
+	z-index: -1;
 }
