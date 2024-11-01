@@ -146,29 +146,13 @@ textarea:not([rows]) {
 
 body {
 	background-color: var(--clr-light-pink);
-}
-
-.background-image {
-	position: fixed;
-	width: 100%;
-	object-fit: cover;
-	z-index: -1;
-}
-
-@media (min-width: 320px) {
-	.background-mobile {
-		display: none;
-	}
-}
-
-.background-desktop {
-	display: none;
+	background-image: url(/assets/images/background-pattern-mobile.svg);
+	background-repeat: no-repeat;
 }
 
 @media (min-width: 321px) {
-	.background-desktop {
-		display: block;
-		background-repeat: no-repeat;
+	body {
+		background-image: url(/assets/images/background-pattern-desktop.svg);
 	}
 }
 
@@ -203,7 +187,7 @@ body {
 	height: 24px;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 321px) {
 	.accordion__header-image {
 		width: 30px;
 		height: 30px;
