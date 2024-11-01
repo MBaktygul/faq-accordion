@@ -145,27 +145,33 @@ textarea:not([rows]) {
 /* global */
 
 body {
+	font-family: 'WorkSans', sans-serif;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--clr-light-pink);
 	background-image: url(/assets/images/background-pattern-mobile.svg);
 	background-repeat: no-repeat;
+	padding: 0 1rem;
 }
 
 @media (min-width: 321px) {
 	body {
 		background-image: url(/assets/images/background-pattern-desktop.svg);
+		background-repeat: no-repeat;
 	}
 }
 
 /* accordion */
 
 .accordion__container {
-	padding: 8.8rem 1.5rem 0 1.5rem;
 	font-family: 'WorkSans', sans-serif;
 }
 
 .accordion {
 	display: flex;
-	margin: 0 auto;
 	flex-direction: column;
 	background-color: var(--clr-white);
 	padding: var(--spacing-l);
@@ -255,10 +261,11 @@ body {
 /* attribution */
 
 .attribution {
+	position: fixed;
+	bottom: 10px;
 	font-size: 12px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-top: 10rem;
 }
