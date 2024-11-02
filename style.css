@@ -243,11 +243,6 @@ body {
 	display: none;
 }
 
-.accordion__answer {
-	display: none;
-	margin-top: 1rem;
-}
-
 .accordion__input:checked ~ .accordion__answer {
 	display: block;
 }
@@ -258,9 +253,12 @@ body {
 
 .accordion__input:checked + .accordion__subheader .icon-minus {
 	display: inline;
+	max-width: 600px;
 }
 
 .accordion__answer {
+	display: none;
+	margin-top: 1rem;
 	transition: 1.4 ease-in;
 }
 
