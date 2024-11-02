@@ -47,7 +47,6 @@ button,
 input,
 label {
 	line-height: 1.1;
-	outline: none;
 }
 
 /* Balance text wrapping on headings */
@@ -82,6 +81,7 @@ textarea,
 select {
 	font-family: inherit;
 	font-size: inherit;
+	outline: none;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
